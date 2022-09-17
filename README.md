@@ -78,6 +78,22 @@ returns a json file containing volumes and thier info.
 - [Pickle](https://pypi.org/project/pickle5/)
 
 
+## Working Principal
+
+To make Good recommendations I needed more Information about the book than just its title , author & genre.
+I specefically looked for a dataset which contains description,sample etc. of the books which would allow the software to make a more educated recommendation as more data is present which can diffrentiate on book from another.
+now that I have a good dataset . I can perform the following tasks:
+
+- Filtering out incomplete/ NULL entries : using numpy's and pandas' functions i cleaned out the data to make it workable and ready for the next step. (please look up the .ipynb file for code and detailed explanations.
+- Using Stem function to look for words with similar meaning. for ex: ['Love', 'Loved', 'loving'].stem() returns ['Love', 'Love', 'Love']
+- Now that the data is cleaned 5000 most common word from thier description are taken and all the books are plotted on a 5000 dimentional space with each of thier coordinates the frequence of those 5000 words.
+- After plotting the nearest 5 points to the selected point are the recommendations. These are found via the function cosine_similarity.
+- Top 5 sorted similarities of each of the books are converted into a picle file for use in the app.py.
+- app.py simply takes input title , gets its index and fetches recommendations.
+- Each of the titles of these recommendations are used in GET request to give thies Thumbnail src link which is displayed along with name and title.
+- The frontend is via Streamlit 
+
+
 ## Deployment
 
 To deploy this project run

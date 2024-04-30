@@ -1,5 +1,5 @@
 
-# Book-Recommender ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+# Book-Recommender (v1.1) ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
 
 This is a simple web-app which recommends books based on the user input.
 
@@ -16,7 +16,10 @@ Video URL : not present
 - Numpy & Pandas
 - Pickle
 
+## Alternatively (using a Docker container)
 
+- Docker Engine
+- Docker CLI
 
 ## Files
 
@@ -31,6 +34,8 @@ Video URL : not present
     - Dataset Manipulation.ipynb - Contains all the commands run on jupyter notebook to clean and filter out the dataset. It is where the 2 pickle files are generated.
 
 - .streamlit - folder containing streamlit config (theme)
+
+- Dockerfile - Useful for building own Docker image
 
 ## API Reference
 
@@ -76,8 +81,12 @@ returns a json file containing volumes and thier info.
 - [Scikit Learn](https://scikit-learn.org/stable/index.html)
     - CountVectorizer (feature_extraction > text)
     - cosine_similarity (metrics > pairwise)
+
 - [Pickle](https://pypi.org/project/pickle5/)
 
+- [Docker](https://www.docker.com/)
+
+- [Docker-Hub](https://hub.docker.com/)
 
 ## Working Principal
 
@@ -99,7 +108,23 @@ now that I have a good dataset . I can perform the following tasks:
 
 To deploy this project run
 
+Manually:
+
 ```bash
-  streamlit run app.py
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
+Using Docker:
+    Build Own image:
+```bash
+docker build -t image_name .
+docker run -p 8501:8501 image_name
+```
+
+Pull Docker Image from public repo:
+```bash
+docker pull <>
+docker run -p 8501:8501 image_name
+```
+App hosted on : http://localhost:8501

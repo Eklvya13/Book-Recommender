@@ -123,8 +123,8 @@ docker run -p 8501:8501 image_name
 ```
 
 Pull Docker Image from public repo:
-```bash
-docker pull <>
+```
+bashdocker pull eklvya/py-bookrec
 docker run -p 8501:8501 image_name
 ```
 App hosted on : http://localhost:8501
